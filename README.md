@@ -47,7 +47,7 @@ Polishing:
 * Icons
 
 Bugs:
-* Merging techs does not add modifiers and I don't know why.
+* Removing recipes still doesnt work - see oil processing
 
 
 Techs: Reshuffle oil recipes

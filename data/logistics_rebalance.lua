@@ -6,17 +6,21 @@ require("util")
 
 -- Various
 
-ProtUtils.tech("railway").prerequisites = {	"engine" }
-ProtUtils.tech("automobilism").prerequisites = { "engine" }
-ProtUtils.tech("stack-inserter").prerequisites = {"advanced-electronics" }
-
 ProtUtils.set_tech_cost("stack-inserter", "rg", 350, 30)
 ProtUtils.set_tech_cost("inserter-capacity-bonus-3", "rgb", 100, 30)
+ProtUtils.set_tech_cost("inserter-capacity-bonus-4", "rgbp", 500, 60)
+
+
 
 -- Rebalance vacuum belts
 
-
 if data.raw.technology["vacuum-logistics-4"] then
+
+	ProtUtils.tech("railway").prerequisites = {	"engine", "logistics" }
+	ProtUtils.tech("automobilism").prerequisites = { "engine", "logistics" }
+	ProtUtils.tech("stack-inserter").prerequisites = {"advanced-electronics", "logistics" }
+
+	
 	local log2 = ProtUtils.merge_techs{"logistics-2", "logistics-3"}
 	log2.effects = {
 		{
