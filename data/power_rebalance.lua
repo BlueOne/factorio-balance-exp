@@ -1,8 +1,9 @@
-local ProtUtils = require("Utils.prototype_utils")
+local ProtUtils = require("Utils.Prototype")
+local Table = require("Utils.Table")
 require("util")
 
 
-local accu_tech = util.merge{ProtUtils.tech("electric-energy-accumulators-1"), {
+local accu_tech = Table.merge{ProtUtils.tech("electric-energy-accumulators-1"), {
 	unit = ProtUtils.pack_unit("rgbp", 150, 60)
 	}
 }
@@ -52,7 +53,7 @@ local boiler_tech = util.merge{data.raw.technology.automation,
 	    },
 	    unit =
 	    {
-			count = 250,
+			count = 50,
 			ingredients = {
 				{"science-pack-1", 1},
 				{"science-pack-2", 1},
@@ -62,6 +63,8 @@ local boiler_tech = util.merge{data.raw.technology.automation,
 		},
 		prerequisites = {
 			"circuit-network",
+			"fluid-handling",
+			"electric-energy-distribution-1",
 		},
 	    order = "a-h-d",
 	}

@@ -1,5 +1,5 @@
 
-local ProtUtils = require("Utils.prototype_utils")
+local ProtUtils = require("Utils.Prototype")
 require("util")
 
 

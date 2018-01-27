@@ -6,7 +6,7 @@
 
 
 
-local ProtUtils = require("Utils.prototype_utils")
+local ProtUtils = require("Utils.Prototype")
 
 
 local tech_alts = {}
@@ -65,6 +65,10 @@ dup("laser-turret-upgrade-5", "rgmb")
 dup("explosives", "rg")
 dup("flamethrower", "rg", 4)
 dup("land-mine", "rg", 1.5)
+dup("energy-shield-equipment", "rg")
+
+dup("worker-robots-speed-1", "rg")
+dup("worker-robots-speed-3", "rgb")
 
 
 
