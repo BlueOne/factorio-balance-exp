@@ -7,6 +7,7 @@
 
 
 local ProtUtils = require("Utils.Prototype")
+local Table = require("Utils.Table")
 
 
 local tech_alts = {}
@@ -15,6 +16,14 @@ local tech_alts = {}
 -- Utilities
 
 
+--[[ 
+	Add a copy of a research with alternative ingredients. There may be multiple such variants of researches. The cost can be calculated automatically if only the science packs are given. Research is automatically added to the data table.
+
+	old (string) - name of base research
+	cost (science pack string or technology unit table) - cost to research this.
+	cost_factor (number) - costs of the pack are multiplied with this. Default is 2.
+	new_name (string) - name of the created research. Default is "alt-" .. old
+--]]
 local function dup(old, cost, cost_factor, new_name)
 	new_name = new_name or "alt-" .. old
 	if data then
@@ -41,7 +50,12 @@ local function dup(old, cost, cost_factor, new_name)
 		data:extend{ new_tech }
 		return new_tech
 	else
-		table.insert(tech_alts, {old, new_name})
+		local k, t = Table.find(tech_alts, function(set) return Table.find(old, set) end)
+		if k then
+			table.insert(t, new_name)
+		else
+			table.insert(tech_alts, {old, new_name})
+		end
 	end
 end
 
@@ -65,7 +79,7 @@ dup("laser-turret-upgrade-5", "rgmb")
 dup("explosives", "rg")
 dup("flamethrower", "rg", 4)
 dup("land-mine", "rg", 1.5)
-dup("energy-shield-equipment", "rg")
+dup("energy-shield-equipment", "rg", 1.5)
 
 dup("worker-robots-speed-1", "rg")
 dup("worker-robots-speed-3", "rgb")

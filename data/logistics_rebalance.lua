@@ -49,21 +49,21 @@ if data.raw.technology["vacuum-logistics-4"] then
 		belt_ent.speed = 0.046875 -- 20/s
 	end
 
-	local belt_recipe = data.raw.recipe["transport-belt"]
+	local belt_recipe =  ProtUtils.recipe("transport-belt")
 	belt_recipe.ingredients =
 		{
 			{"iron-plate", 3},
 			{"iron-gear-wheel", 1}
 		}
 
-	local ub_recipe = data.raw.recipe["underground-belt"]
+	local ub_recipe =  ProtUtils.recipe("underground-belt")
 	ub_recipe.ingredients =
 		{
 			{"iron-plate", 15},
 			{"transport-belt", 5}
 		}
 
-	local splitter_recipe = data.raw.recipe["splitter"]
+	local splitter_recipe = ProtUtils.recipe("splitter")
 	splitter_recipe.ingredients =
 		{
 			{"electronic-circuit", 5},
@@ -72,9 +72,10 @@ if data.raw.technology["vacuum-logistics-4"] then
 		}
 
 
-	ProtUtils.replace_ingredient("fast-transport-belt", "transport-belt")
-	ProtUtils.replace_ingredient("fast-underground-belt", "underground-belt")
-	ProtUtils.replace_ingredient("fast-splitter", "splitter")
+	ProtUtils.recipe_replace_ingredient_all("fast-transport-belt", "transport-belt")
+	ProtUtils.recipe_replace_ingredient_all("fast-underground-belt", "underground-belt")
+	ProtUtils.recipe_replace_ingredient_all("fast-splitter", "splitter")
+
 
 	-- data.raw["transport-belt"]["vacuum-transport-belt"].order = "a[transport-belt]-d[vacuum-transport-belt]"
 	-- data.raw["underground-belt"]["vacuum-underground-belt"].order = "b[underground-belt]-d[vacuum-underground-belt]"
