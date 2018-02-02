@@ -20,7 +20,7 @@ if data.raw.technology["vacuum-logistics-4"] then
 	ProtUtils.tech("automobilism").prerequisites = { "engine", "logistics" }
 	ProtUtils.tech("stack-inserter").prerequisites = {"advanced-electronics", "logistics" }
 
-	
+
 	local log2 = ProtUtils.merge_techs{"logistics-2", "logistics-3"}
 	log2.effects = {
 		{
@@ -38,6 +38,8 @@ if data.raw.technology["vacuum-logistics-4"] then
 	}
 	log2.unit = ProtUtils.pack_unit("rgb", 500, 15)
 	log2.prerequisites = {"advanced-electronics", "logistics"}
+
+	ProtUtils.tech("vacuum-logistics-4").unit = ProtUtils.pack_unit("rgbpys", 200, 30)
 
 	ProtUtils.remove_entity("fast-transport-belt", "transport-belt")
 	ProtUtils.remove_entity("fast-underground-belt", "underground-belt")
@@ -90,5 +92,22 @@ if data.raw.technology["vacuum-logistics-4"] then
 	-- 	local belt_ent = data.raw[name]["vacuum-" .. name]
 	-- 	belt_ent.speed = 0.28125 -- 120/s
 	-- end
+
+	local new_stack_sizes = { item = {
+		{"express-transport-belt", 200},
+		{"express-underground-belt", 100},
+		{"express-splitter", 100},
+		{"vacuum-transport-belt", 200},
+		{"vacuum-underground-belt", 100},
+		{"vacuum-splitter", 100},
+	} }
+
+	for t, items in pairs(new_stack_sizes) do
+		for _, item in pairs(items) do
+			ProtUtils[t](item[1]).stack_size = item[2]
+		end
+	end
+
+
 
 end -- End vacuum logistics rebalance.

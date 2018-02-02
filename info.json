@@ -2,8 +2,8 @@
   "name": "balance-experimental",
   "version": "0.0.1",
   "factorio_version": "0.16",
-  "title": "Balance Playground",
+  "title": "Balance Experiments",
   "author": "blueblue",
   "description": "Lots of balance changes to come.",
-  "dependencies": ["base >= 0.16.0", "? VacuumBelts >= 0.0.1"]
+  "dependencies": ["base >= 0.16.0", "? VacuumBelts >= 0.0.1", "? bobgreenhouse >= 0.16.0"]
 }

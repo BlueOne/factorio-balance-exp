@@ -1,47 +1,58 @@
 Balance Experimental
 ===================
 
-This is a collection of changes to the balance of the game. It should be noted in advance that this aims to make the normal game more interesting, we do not care about things like marathon or death world here. If marathon still works then that's great but otherwise so be it.
+This is a collection of changes to the balance of the game. This is a mix of fixing small bits in the game that don't feel right and testing ideas where I'm unsure if they work. A lot of this is experimental and while the changes have the potential to add to the game, the mod is one way to find out wether they actually do. Half of these are probably doing more harm than good. Feel free to leave feedback.
+
+It should be noted in advance that this aims to make the normal game more interesting, but I'm not looking at marathon or death world.
+
 
 
 Tech Merges / Cleanup
 ----------------------
 
-The tech tree in factorio is a mix of a talent tree and a progression system. There are a number of techs that function as pure upgrades to existing techs, so they become valuable in the late game without being OP in the early game. Then there are techs that add new content to different phases of the game.
+The tech tree in factorio is a mix of a talent tree and a progression system. There are a number of techs that function as pure upgrades to existing techs, so stuff like gun turrets stay valuable in the late game without being OP in the early game. Then there are techs that add new content to different phases of the game to give an actual sense of progression.
 
-Ideally the tech tree should allow the player to make interesting choices. Even knowing that eventually everything is going to be researched, prioritizing should be interesting but that is not what happens in reality. Instead what happens often is that players will just research the interesting techs on the tier first, then keep researching until they run out of things to research. This is an issue especially with red/green science and stays an issue throughout military and blue science. The late game is in a better place here, simply because it offers a number of expensive and interesting technologies.
+Ideally the tech tree should allow the player to make interesting choices. Even knowing that eventually everything is going to be researched, prioritizing which tech is necessary next should be interesting. That is not what happens in reality, instead what happens often is that players will just research the interesting techs on the tier first, then keep researching randomly until they run out of things to research. This is an issue especially with red/green science but stays an issue throughout military and blue science. The late game is in a better place here, simply because it offers a number of expensive and interesting technologies like nuclear, artillery, logistic system, rocket silo, power armor and so on.
 
-A related issue is that the number of "filler" techs that are just taken because there is nothing better to research is quite large. To name some examples, "flight" and "robotics" don't really do anything, the modules researches before mk3 are very cheap, there are a more weapon upgrade techs than I feel are necessary and so on. The mod merges a number of filler techs together, adding their costs up, to promote more meaningful choices. 
+A related issue is that the number of "filler" techs is quite large, i.e. techs that are just taken because there is nothing better to research or because they are prerequisites to more interesting things. To name some examples, "flight" and "robotics" don't really do anything, the modules researches before mk3 are very cheap so there's no need to have three separate techs for this, there are a more weapon upgrade techs than I feel are necessary and so on. 
 
-We also introduce the concept of techs which can be researched through two different science pack costs; for example a military science military upgrade might be available for research via only red and green science as well, except the cost is vastly bigger than using military science. This allows a softer transition into higher tier science packs.
+The mod introduces the idea that some techs can be researched through two different science pack costs; for example a military science military upgrade might be available for research via only red and green science as well, except the cost is twice as much as using military science. This allows a softer transition into higher tier science packs.
 
-Additionally, many prerequisites for technologies are cleaned up or balanced. The technologies that unlock recipes should now have mostly correct prerequisites set.
+
+Additionally the mod merges a number of filler techs together, adding their costs up, to promote more meaningful choices. 
+
+As a minor change many prerequisites for technologies are cleaned up. The technologies that unlock recipes should now have mostly correct prerequisites set. This includes some minor balance changes, for example combat robots are made available a bit earlier.
 
 
 Power
 ------
 
-Nuclear and steam appear to be in a great spot balancing-wise. Take a look at solar panels and accumulators. Solar panels give free power and are super easy to set up. They cost a lot of resources and space which offsets this somewhat, but still, setting them up is really easy. The game has this nice system where you need to store power for the night but then trivializes this immediately by giving you accumulators. We're pushing accus back into late game via gating them with hard research. Solar panels stay in the game and we're introducing an electric boiler to allow storing power in the form of steam. This makes setting up power a bit more involved than just stamping down a blueprint but allows solar panels to stay in the game. 
+To enable the power modifications, install bob's greenhouses mod (you'll also need bob's functions library). Nuclear and steam appear to be in a great spot balancing-wise. I take a critical view of solar panels and accumulators. Solar panels give free power and are very easy to set up. They cost a lot of resources and space which offsets this somewhat, but still they're kind of boring. The necessity to store power at night could be interesting but then that is just made trivial immediately with accumulators. 
+
+The mod pushes accus back into late game via gating them with research. Solar panels stay where they are for now and we're introducing an electric boiler to allow storing power in the form of steam. This makes setting up power a bit more involved than just stamping down a blueprint but allows solar panels to stay in the game. 
 
 As an additional power option we might introduce greenhouses. Those also don't require coal but take more space and still drive evolution up. They would be in a similar place as solar/accumulators since they would generate power out of nothing (water).
+
 
 
 Logistics
 ----------
 
-I add vacuum belts as a dependency to try them out: these are super-fast belts with which inserters cannot interact directly. They are bundled in a separate mod which I am not the author of. I rebalance the game so there only exist three tiers of belts: yellow now does 20 items per second, blue does 40 and vacuum does 120. Blue and vacuum tiers have increased stack sizes. Yellow belt cost is increased, blue belt cost is decreased compared to vanilla. 
+To enable the following changes, you'll need to install the mod vacuum belts (let it explicitly be stated here that I am not the author of that mod). Vacuum belts are super-fast belts with which inserters cannot interact directly. I feel that four belt tiers are a bit too mch, so I am taking the opportunity to remove a belt tier. I rebalance the game so there only exist three tiers of belts: yellow now does 20 items per second, blue does 40 and vacuum does 120. Having only two normal belt tiers instead of three is useful because it reduces the tedium of running around and upgrading belts. Blue and vacuum tiers have increased stack sizes. Yellow belt cost is increased slightly to compensate the higher throughput. Blue belt cost is decreased compared to vanilla. 
+
 
 
 Stack Sizes
 ------------
 
-I'm moving some of the stack sizes of items a bit towards how many of them you actually need. This so far doesnt affect the intermediate products, so it will mostly just have an effect on the player's inventory but not on train sizes. This is one of the changes where I'm removing some of the quirkyness / character of the game (for example steam engines stack size 10 but boilers allow 50), but we'll see wether it feels better.
+I'm adjusting some of the stack sizes of items to be more in line with the amount of items you actually need. I'm mostly concerned with buildable items, balancing intermediate products has different. The changes will mostly just have an effect on the player's inventory but not on train sizes. The reasoning here is mostly that managing player inventory is not all that interesting and balancing items through stack sizes appears to be a bad idea (it's been tried with roboports). There is an implicit trade here because while this will make the game feel more polished, sometimes less polish adds to the flavor. I am increasing the stack size of steam engines, turbines, roboports, chemical plants, beacons, chemical plants, locomotives, wagons and walls. I am decreasing the stack sizes of most of the equipments, nuclear reactors, boilers and heat exchangers. 
+
 
 
 Military
 ---------
 
-I'm making some changes to availability of military items. The game is still lacking an incentive for the player to make explosives, so I'm adding an alternative recipe for military science that is cheaper on the iron/copper side but needs explosives. This should nudge players towards creating explosive-based combat items. For equipment, in vanilla the portable fusion reactor compared to solar panels gives five times more electricity for 0.4 times the resources (if we don't consider oil costs). I feel players might thus feel compelled to skip solar panels. I'm reducing the price from five solar panels to one solar panel to offset this and make them more easily available. I'm also making some of the other equipment available earlier, otherwise the player unlocks the armor and forgets about it because the equipment is not available.
+The game is still lacking an incentive for the player to make explosives, so I'm adding an alternative recipe for military science that is cheaper on the iron/copper side but needs explosives. This should nudge players towards creating explosive-based combat items. For equipment, in vanilla the portable fusion reactor compared to solar panels gives five times more electricity for 0.4 times the resources (if we don't consider oil costs). I feel players might thus feel compelled to skip solar panels. I'm reducing the price from five solar panels to one solar panel to offset this and make them more easily available. I'm also making some of the other equipment available earlier, otherwise the player unlocks the armor and forgets about it because the equipment is not available.
 
 Some other technologies are made available a bit earlier, this includes combat robots, land mines, explosives and grenade damage.
 
@@ -56,7 +67,7 @@ Polishing:
 
 Bugs:
 * Test how adding mod to existing save works.
-* Removing recipes still doesnt work - see oil processing
+* Removing recipes from techs still doesnt work - see oil processing
 
 
 Techs: Reshuffle oil recipes

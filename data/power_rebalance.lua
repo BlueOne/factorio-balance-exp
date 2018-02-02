@@ -3,14 +3,44 @@ local Table = require("Utils.Table")
 require("util")
 
 
-local accu_tech = Table.merge{ProtUtils.tech("electric-energy-accumulators-1"), {
-	unit = ProtUtils.pack_unit("rgbp", 150, 60)
+
+if not data.raw["assembling-machine"]["bob-greenhouse"] then return end
+
+-- Green houses
+ProtUtils["assembling-machine"]("bob-greenhouse").crafting_speed = 1
+local greenhouse_cycle = Table.merge{
+	ProtUtils.recipe("bob-basic-greenhouse-cycle"),
+	{
+		name = "bob-enhanced-greenhouse-cycle",
+		order = "g[greenhouse-cycle-1]b",
+		normal = {
+			energy_required = 60,
+			enabled = "false",
+			results = {
+				{type = "item", name = "raw-wood", amount_min = 20, amount_max = 30},
+				{type = "item", name = "seedling", amount_min = 0, amount_max = 6},
+			}
+		}
 	}
 }
 
-accu_tech.prerequisites = {"electric-energy-distribution-2", "advanced-material-processing-2"}
+data:extend{
+	greenhouse_cycle
+}
+table.insert(ProtUtils.tech("bob-greenhouse").effects, {type="unlock-recipe", recipe="bob-enhanced-greenhouse-cycle"})
+
+
+-- Accu changes
+local accu_tech = Table.merge{ProtUtils.tech("electric-energy-accumulators-1"), {
+		unit = ProtUtils.pack_unit("rgbp", 150, 60),
+		prerequisites = {"electric-energy-distribution-2", "advanced-material-processing-2"}
+	}
+}
+
 ProtUtils.set_tech("electric-energy-accumulators-1", accu_tech)
 
+
+-- Greenhouses
 
 -- Electric Boiler
 local boiler_ent, boiler_item, boiler_recipe = ProtUtils.new_entity("electric-boiler", "boiler", "boiler")
