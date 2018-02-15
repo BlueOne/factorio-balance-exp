@@ -40,12 +40,10 @@ local accu_tech = Table.merge{ProtUtils.tech("electric-energy-accumulators-1"), 
 ProtUtils.set_tech("electric-energy-accumulators-1", accu_tech)
 
 
--- Greenhouses
-
 -- Electric Boiler
 local boiler_ent, boiler_item, boiler_recipe = ProtUtils.new_entity("electric-boiler", "boiler", "boiler")
 
-util.merge{boiler_ent, {
+Table.merge_inplace{boiler_ent, {
 	energy_usage = "1800kW",
 	minable = {hardness = 0.2, mining_time = 0.5, result = "electric-boiler"},
 }}
@@ -55,23 +53,23 @@ boiler_ent.energy_source = {
 	effectivity = 0.5,
 }
 
-util.merge{boiler_item, {
+Table.merge_inplace{boiler_item, {
 	order = "e[accumulator]-b[electric-boiler]",
 }}
 
-util.merge{boiler_recipe,
+Table.merge_inplace{boiler_recipe,
 	{
 		ingredients = {
-			{"stone-path", 5},
-			{"steel", 5},
-			{"electric-circuit", 3},
-			{"electric-engine", 1},
+			{"stone-brick", 5},
+			{"steel-plate", 5},
+			{"electronic-circuit", 3},
+			{"electric-engine-unit", 1},
 		},
 		enabled = false
 	}
 }
 
-local boiler_tech = util.merge{data.raw.technology.automation,
+local boiler_tech = Table.merge{data.raw.technology.automation,
 	{
 	    name = "electric-boiler",
 	    effects =
