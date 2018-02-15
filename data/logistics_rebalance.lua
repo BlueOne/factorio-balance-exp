@@ -14,7 +14,7 @@ ProtUtils.set_tech_cost("inserter-capacity-bonus-4", "rgbp", 500, 60)
 
 -- Rebalance vacuum belts
 
-if data.raw.technology["vacuum-logistics-4"] then
+if data.raw.technology["vacuum-logistics-4"] and settings.startup["balanceexp-enable-vacuum-rework"].value then
 
 	ProtUtils.tech("railway").prerequisites = {	"engine", "logistics" }
 	ProtUtils.tech("automobilism").prerequisites = { "engine", "logistics" }
@@ -94,9 +94,6 @@ if data.raw.technology["vacuum-logistics-4"] then
 	-- end
 
 	local new_stack_sizes = { item = {
-		{"express-transport-belt", 200},
-		{"express-underground-belt", 100},
-		{"express-splitter", 100},
 		{"vacuum-transport-belt", 200},
 		{"vacuum-underground-belt", 100},
 		{"vacuum-splitter", 100},
@@ -107,7 +104,5 @@ if data.raw.technology["vacuum-logistics-4"] then
 			ProtUtils[t](item[1]).stack_size = item[2]
 		end
 	end
-
-
 
 end -- End vacuum logistics rebalance.

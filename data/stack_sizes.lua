@@ -2,6 +2,12 @@ local ProtUtils = require("Utils.Prototype")
 
 local new_stack_sizes = {
     item = {
+        {"fast-transport-belt", 200},
+		{"fast-underground-belt", 100},
+		{"fast-splitter", 100},
+		{"express-transport-belt", 200},
+		{"express-underground-belt", 100},
+		{"express-splitter", 100},
         {"roboport", 20},
         {"nuclear-reactor", 5},
         {"heat-exchanger", 20},
