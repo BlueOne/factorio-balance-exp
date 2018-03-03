@@ -45,18 +45,17 @@ To enable the following changes, you'll need to install the mod vacuum belts (le
 Stack Sizes
 ------------
 
-I'm adjusting some of the stack sizes of items to be more in line with the amount of items you actually need. I'm mostly concerned with buildable items, balancing intermediate products has different. The changes will mostly just have an effect on the player's inventory but not on train sizes. The reasoning here is mostly that managing player inventory is not all that interesting and balancing items through stack sizes appears to be a bad idea (it's been tried with roboports). There is an implicit trade here because while this will make the game feel more polished, sometimes less polish adds to the flavor. I am increasing the stack size of steam engines, turbines, roboports, chemical plants, beacons, chemical plants, locomotives, wagons and walls. I am decreasing the stack sizes of most of the equipments, nuclear reactors, boilers and heat exchangers. 
+I'm adjusting some of the stack sizes of items to be more in line with the amount of items you actually need. This does not affect intermediate products, only buildable items. The idea is mostly that managing player inventory is not all that interesting and balancing items through stack sizes appears to be a bad idea. For items that are less essential I increase the stack size to make using them more managable, for example the stack sizes of walls and lamps have been doubled. I am decreasing the stack sizes of most of the equipments, space science packs, radars, storage tanks, nuclear reactors, centrifuges, boilers and heat exchangers. I increase the stack sizes of higher tier belts, roboports, chemical plants, turbines, steam engines, locomotives and wagons, cliff explosives, and others.
 
 
 
 Military
 ---------
 
-The game is still lacking an incentive for the player to make explosives, so I'm adding an alternative recipe for military science that is cheaper on the iron/copper side but needs explosives. This should nudge players towards creating explosive-based combat items. For equipment, in vanilla the portable fusion reactor compared to solar panels gives five times more electricity for 0.4 times the resources (if we don't consider oil costs). I feel players might thus feel compelled to skip solar panels. I'm reducing the price from five solar panels to one solar panel to offset this and make them more easily available. I'm also making some of the other equipment available earlier, otherwise the player unlocks the armor and forgets about it because the equipment is not available.
+The game is still lacking in incentives for the player to make explosives, so I'm adding an alternative recipe for military science that is cheaper on the iron/copper side but needs explosives. This should nudge players towards creating explosive-based combat items. For equipment, in vanilla the portable fusion reactor compared to solar panels gives five times more electricity for 0.4 times the resources (if we don't consider oil costs). Players might thus feel compelled to skip solar panels. I'm reducing the price from five solar panels to one solar panel to offset this and make them more easily available. I'm also making some of the other equipment available earlier, otherwise the player unlocks the armor and forgets about it because the equipment is not available. The personal laser defense is weakened and made available earlier.
 
 Some other technologies are made available a bit earlier, this includes combat robots, land mines, explosives and grenade damage.
 
-The portable solar panel might still require a bit of an increase and I'm suspecting the personal laser defense should be weakened and made available a bit earlier to distinguish it from the discharge defense. Combat robots and poison/slowdown capsules will still need to be watched. The tank shells have two tiers that are basically the same, which is just awkward. Will need more data on this.
 
 
 Todos
@@ -69,6 +68,8 @@ Bugs:
 * Test how adding mod to existing save works.
 * Removing recipes from techs still doesnt work - see oil processing
 
+The portable solar panel might still require a bit of an increase. The discharge defense might need a second tier. Combat robots and poison/slowdown capsules will still need to be watched. The tank shells have two tiers that are basically the same, which is awkward. 
+
 
 Techs: Reshuffle oil recipes
 Look at military 3
@@ -76,8 +77,6 @@ Look at military 3
 
 
 Features:
-
-Greenhouses
 
 Equipments need a couple touches. Portable solar feels weak, even though they do about 1/4 of the fusion reactor. Increase just bit? -- Made easier to build. 
 

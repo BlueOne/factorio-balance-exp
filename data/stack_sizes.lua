@@ -9,6 +9,7 @@ local new_stack_sizes = {
 		{"express-underground-belt", 100},
 		{"express-splitter", 100},
         {"roboport", 20},
+        {"storage-tank", 20},
         {"nuclear-reactor", 5},
         {"heat-exchanger", 20},
         {"boiler", 20},
@@ -16,7 +17,7 @@ local new_stack_sizes = {
         {"steam-turbine", 20},
         {"chemical-plant", 20},
         {"centrifuge", 20},
-        {"beacon", 20},
+        {"beacon", 20}, -- Not sure on this one, they take a lot of power.
         {"stone-wall", 200},
         {"fusion-reactor-equipment", 1},
         {"energy-shield-equipment", 10},
@@ -25,7 +26,17 @@ local new_stack_sizes = {
         {"battery-mk2-equipment", 10},
         {"personal-laser-defense-equipment", 10},
         {"discharge-defense-equipment", 10},
-        {"small-lamp", 200}
+        {"small-lamp", 200},
+        {"radar", 20},
+    },
+    -- ["rail-planner"] = {
+    --     {"rail", 200}
+    -- },
+    capsule = {
+        {"cliff-explosives", 200}
+    },
+    tool = {
+        {"space-science-pack", 200}
     },
     ["item-with-entity-data"] = {
         {"cargo-wagon", 20},

@@ -6,21 +6,16 @@ ProtUtils.tech("cliff-explosives").unit = ProtUtils.pack_unit("rg", 400, 15)
 
 local alternative_military = ProtUtils.duplicate_recipe("military-science-pack", "alt-military-science-pack")
 ProtUtils.recipe_replace_ingredient(alternative_military, "piercing-rounds-magazine", "explosives")
-ProtUtils.recipe_remove_ingredient(alternative_military, "grenades")
+ProtUtils.recipe_remove_ingredient(alternative_military, "grenade")
 data:extend{
     alternative_military
 }
 
 
-Table.merge_inplace{
-    ProtUtils.recipe("personal-laser-defense-equipment"),
-    {
-        ingredients = {
-            {"steel-plate", 5},
-            {"laser-turret", 5},
-            {"advanced-circuit", 5},
-        }
-    }
+ProtUtils.recipe("personal-laser-defense-equipment").ingredients = {
+    {"steel-plate", 5},
+    {"laser-turret", 5},
+    {"advanced-circuit", 5},
 }
 
 Table.merge_inplace{
@@ -50,3 +45,6 @@ ProtUtils.recipe("solar-panel-equipment").ingredients = {
     {"advanced-circuit", 1},
     {"steel-plate", 5}
 }
+
+ProtUtils.item("solar-panel-equipment").power = "20kW"
+

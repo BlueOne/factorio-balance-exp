@@ -76,13 +76,27 @@ dup("grenade-damage-1", "rg", 1.5)
 dup("grenade-damage-2", "rg", 3)
 dup("laser-turret-upgrade-3", "rgm")
 dup("laser-turret-upgrade-5", "rgmb")
+
+dup("military-3", "rgm", 2)
 dup("explosives", "rg")
 dup("flamethrower", "rg", 4)
 dup("land-mine", "rg", 1.5)
+
+dup("automation-3", "rgb")
+dup("circuit-network", "r")
+
 dup("energy-shield-equipment", "rg", 1.5)
+dup("fusion-reactor-equipment", "rgby", 1.5)
+dup("power-armor-2", "rgby", 1.5)
 
 dup("worker-robots-speed-1", "rg")
 dup("worker-robots-speed-3", "rgb")
+
+dup("nuclear-power", "rgbp", 0.75)
+dup("atomic-bomb", "1234567", 0.75)
+dup("kovarex-enrichment-process", "rgbpys", 0.75)
+dup("nuclear-fuel-reprocessing", "rgbpy", 0.5)
+dup("uranium-ammo", "rgbmys", 0.75)
 
 
 

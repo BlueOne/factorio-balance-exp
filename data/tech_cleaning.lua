@@ -15,6 +15,8 @@ ProtUtils.merge_techs({
 	"inserter-capacity-bonus-6"
 })
 
+ProtUtils.tech("circuit-network").unit.count = 20
+
 -- Tutorial is in the way of this merge ...
 -- ProtUtils.merge_techs({
 -- 	"railway",
