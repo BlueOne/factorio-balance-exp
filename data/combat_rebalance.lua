@@ -48,3 +48,10 @@ ProtUtils.recipe("solar-panel-equipment").ingredients = {
 
 ProtUtils.item("solar-panel-equipment").power = "20kW"
 
+
+local gun_turret = ProtUtils["ammo-turret"]("gun-turret")
+gun_turret.max_health = 500
+gun_turret.ammo_stack_limit = 40
+
+local laser_turret = ProtUtils["electric-turret"]("laser-turret")
+laser_turret.max_health = 500
