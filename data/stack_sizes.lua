@@ -17,7 +17,7 @@ local new_stack_sizes = {
         {"steam-turbine", 20},
         {"chemical-plant", 20},
         {"centrifuge", 20},
-        {"beacon", 20}, -- Not sure on this one, they take a lot of power.
+        {"beacon", 20}, 
         {"stone-wall", 200},
         {"fusion-reactor-equipment", 1},
         {"energy-shield-equipment", 10},
@@ -29,9 +29,9 @@ local new_stack_sizes = {
         {"small-lamp", 200},
         {"radar", 20},
     },
-    -- ["rail-planner"] = {
-    --     {"rail", 200}
-    -- },
+    ["rail-planner"] = {
+        {"rail", 200}
+    },
     capsule = {
         {"cliff-explosives", 200}
     },

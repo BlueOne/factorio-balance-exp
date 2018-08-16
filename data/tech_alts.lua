@@ -12,7 +12,7 @@ local Table = require("Utils.Table")
 
 local tech_alts = {}
 
-
+if not settings.startup["balanceexp-enable-tech-alts"].value then return nil end
 -- Utilities
 
 
@@ -62,28 +62,30 @@ end
 
 -- Actual Techs
 
+
 dup("gun-turret-damage-3", "rg")
 --dup("gun-turret-damage-4", "rg", 3)
 dup("gun-turret-damage-5", "rgm")
 dup("bullet-upgrade-3", "rg")
 --dup("bullet-upgrade-4", "rg", 3)
 dup("bullet-upgrade-5", "rgm")
---dup("bullet-upgrade-6", "rgm", 3)
-dup("shotgun-shell-upgrade-3", "rg")
+dup("bullet-upgrade-6", "rgmb", 3)
+dup("shotgun-shell-upgrade-3", "rg", 1.5)
+dup("shotgun-shell-upgrade-4", "rg")
 dup("shotgun-shell-upgrade-5", "rgm")
---dup("shotgun-shell-upgrade-4", "rg", 3)
 dup("grenade-damage-1", "rg", 1.5)
-dup("grenade-damage-2", "rg", 3)
+dup("grenade-damage-2", "rg")
 dup("laser-turret-upgrade-3", "rgm")
 dup("laser-turret-upgrade-5", "rgmb")
 
-dup("military-3", "rgm", 2)
+dup("military-3", "rgm")
 dup("explosives", "rg")
 dup("flamethrower", "rg", 4)
-dup("land-mine", "rg", 1.5)
 
-dup("automation-3", "rgb")
-dup("circuit-network", "r")
+
+dup("advanced-material-processing-2", "rgm", 3)
+dup("effect-transmission", "rgb", 3)
+-- dup("circuit-network", "r")
 
 dup("energy-shield-equipment", "rg", 1.5)
 dup("fusion-reactor-equipment", "rgby", 1.5)
@@ -92,11 +94,12 @@ dup("power-armor-2", "rgby", 1.5)
 dup("worker-robots-speed-1", "rg")
 dup("worker-robots-speed-3", "rgb")
 
-dup("nuclear-power", "rgbp", 0.75)
-dup("atomic-bomb", "1234567", 0.75)
-dup("kovarex-enrichment-process", "rgbpys", 0.75)
-dup("nuclear-fuel-reprocessing", "rgbpy", 0.5)
-dup("uranium-ammo", "rgbmys", 0.75)
+dup("nuclear-power", "rgbp", 0.5)
+dup("atomic-bomb", "1234567", 0.5)
+dup("kovarex-enrichment-process", "rgbpys", 0.5)
+dup("uranium-ammo", "rgbm", 1.5)
+--dup("uranium-ammo", "rgbmys", 2/3)
+
 
 
 

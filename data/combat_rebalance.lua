@@ -1,12 +1,17 @@
 local ProtUtils = require("Utils.Prototype")
 local Table = require("Utils.Table")
 
-ProtUtils.tech("gates").unit = ProtUtils.pack_unit("rg", 30, 30)
-ProtUtils.tech("cliff-explosives").unit = ProtUtils.pack_unit("rg", 400, 15)
+-- ProtUtils.tech("gates").unit = ProtUtils.pack_unit("rg", 30, 30)
+-- ProtUtils.tech("cliff-explosives").unit = ProtUtils.pack_unit("rg", 400, 15)
 
-local alternative_military = ProtUtils.duplicate_recipe("military-science-pack", "alt-military-science-pack")
+
+
+-- Alternative Military Science Pack Recipe
+local alternative_military = Table.deepcopy(ProtUtils.recipe("military-science-pack"))
+alternative_military.name = "alt-military-science-pack"
 ProtUtils.recipe_replace_ingredient(alternative_military, "piercing-rounds-magazine", "explosives")
 ProtUtils.recipe_remove_ingredient(alternative_military, "grenade")
+table.insert(ProtUtils.technology("explosives").effects, {type="unlock-recipe", recipe=alternative_military.name})
 data:extend{
     alternative_military
 }

@@ -7,6 +7,8 @@ local TableUtils = require("utils/table")
 
 local alt_researches = require("data/tech_alts")
 
+if not alt_researches then return end
+
 Event.register(defines.events.on_research_finished, function(event)
 	local research = event.research
 	local name = research.name
@@ -26,7 +28,8 @@ end)
 
 local function init_alternative_techs(force)
     for _, set in pairs(alt_researches) do
-        for _, tech in pairs(set) do
+		for _, tech in pairs(set) do
+			if not force.technologies[tech] then error("Alternative Tech Init Error! " .. tech) end
             if force.technologies[tech].researched then
                 for _, t in pairs(set) do
                     force.technologies[t].researched = true
